@@ -3,5 +3,136 @@
 @tailwind utilities;
 
 :root {
+  --black: #000000;
+  --white: #FFFFFF;
+  --purple: #AB23FF;
+  --blue: #3D8BFF;
+  --linear: linear-gradient(to right, var(--blue), var(--purple));
+  --grey-line: #13171D;
+  --grey-text: #46505F;
 }
 
+/* General */
+body {
+  background-color: black;
+  position: relative;
+  
+}
+
+.custom-gradient-text {
+  background: linear-gradient(to right, #3D8BFF 0%, #AB23FF 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.custom-gradient-border {
+  border-image-source: linear-gradient(to right, #3D8BFF 0%, #AB23FF 100%);
+  border-image-slice: 1;
+}
+
+/* Fonts */
+@font-face {
+  font-family: 'MonumentExtended';
+  src: url('/fonts/MonumentExtended-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Satoshi-Medium';
+  src: url('/fonts/Satoshi-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
+}
+
+.font-MonumentExtended {
+  font-family: 'MonumentExtended', Arial, sans-serif;
+}
+
+.font-Satoshi-Bold {
+  font-family: 'Satoshi-Bold', Arial, sans-serif;
+}
+
+.font-Satoshi-Medium {
+  font-family: 'Satoshi-Medium', Arial, sans-serif;
+}
+
+.font-Satoshi-Regular {
+  font-family: 'Satoshi-Regular', Arial, sans-serif;
+}
+
+.video-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #000000 0%, #3D8BFF 47%, #AB23FF 99%);
+  mix-blend-mode: soft-light;
+}
+
+.profiting-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, #3D8BFF 0%, #AB23FF 100%);
+  mix-blend-mode: soft-light;
+}
+
+.frame-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0) 100%);
+  mix-blend-mode: hard-light;
+}
+
+/* scroll styles */
+body::-webkit-scrollbar {
+  width: 5px;
+  height: 65px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #AB23FF;
+  border-radius: 5px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #000000;
+}
+
+
+/* animate-button */
+.animate-button-gradient {
+  background: linear-gradient(to right, #3D8BFF 0%, #AB23FF 100%);
+}
+
+.animate-button:hover .label-up {
+  top:-100%;
+  background: #3D8BFF;
+}
+
+
+.mission:hover path {
+  stroke: #3D8BFF;
+}
+
+.mission:hover span {
+  color: #3D8BFF;
+  transition-duration: 200ms;
+}
